@@ -60,7 +60,7 @@
 				F8F3B0C727B6BC5A00A96E74 /* View */,
 				F8F3B0C627B6BC5400A96E74 /* ViewModels */,
 				F8F3B0C527B6BC4D00A96E74 /* Models */,
-				F8F3B0CC27B6C2C800A96E74 /* Menedgers */,
+				F8F3B0CC27B6C2C800A96E74 /* Manadgers */,
 				F8F3B0BB27B6BC2400A96E74 /* Assets.xcassets */,
 				F8F3B0BD27B6BC2400A96E74 /* Preview Content */,
 			);
@@ -98,11 +98,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F8F3B0CC27B6C2C800A96E74 /* Menedgers */ = {
+		F8F3B0CC27B6C2C800A96E74 /* Manadgers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Menedgers;
+			path = Manadgers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
