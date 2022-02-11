@@ -14,6 +14,7 @@
 		F8F3B0C927B6BC7E00A96E74 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0C827B6BC7E00A96E74 /* Weather.swift */; };
 		F8F3B0CB27B6BEA800A96E74 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0CA27B6BEA800A96E74 /* WeatherViewModel.swift */; };
 		F8F3B0CE27B6C32500A96E74 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */; };
+		F8F3B0D027B6FBEE00A96E74 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0CF27B6FBEE00A96E74 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F8F3B0C827B6BC7E00A96E74 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F8F3B0CA27B6BEA800A96E74 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F8F3B0CF27B6FBEE00A96E74 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */,
+				F8F3B0CF27B6FBEE00A96E74 /* WeatherManager.swift */,
 			);
 			path = Manadgers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F3B0D027B6FBEE00A96E74 /* WeatherManager.swift in Sources */,
 				F8F3B0BA27B6BC2300A96E74 /* ContentView.swift in Sources */,
 				F8F3B0CB27B6BEA800A96E74 /* WeatherViewModel.swift in Sources */,
 				F8F3B0CE27B6C32500A96E74 /* LocationManager.swift in Sources */,
