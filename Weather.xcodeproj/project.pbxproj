@@ -13,6 +13,7 @@
 		F8F3B0BF27B6BC2400A96E74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F3B0BE27B6BC2400A96E74 /* Preview Assets.xcassets */; };
 		F8F3B0C927B6BC7E00A96E74 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0C827B6BC7E00A96E74 /* Weather.swift */; };
 		F8F3B0CB27B6BEA800A96E74 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0CA27B6BEA800A96E74 /* WeatherViewModel.swift */; };
+		F8F3B0CE27B6C32500A96E74 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		F8F3B0BE27B6BC2400A96E74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8F3B0C827B6BC7E00A96E74 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F8F3B0CA27B6BEA800A96E74 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		F8F3B0CC27B6C2C800A96E74 /* Manadgers */ = {
 			isa = PBXGroup;
 			children = (
+				F8F3B0CD27B6C32500A96E74 /* LocationManager.swift */,
 			);
 			path = Manadgers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			files = (
 				F8F3B0BA27B6BC2300A96E74 /* ContentView.swift in Sources */,
 				F8F3B0CB27B6BEA800A96E74 /* WeatherViewModel.swift in Sources */,
+				F8F3B0CE27B6C32500A96E74 /* LocationManager.swift in Sources */,
 				F8F3B0C927B6BC7E00A96E74 /* Weather.swift in Sources */,
 				F8F3B0B827B6BC2300A96E74 /* WeatherApp.swift in Sources */,
 			);
