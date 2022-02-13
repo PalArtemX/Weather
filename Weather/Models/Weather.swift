@@ -6,77 +6,49 @@
 //
 
 import Foundation
+import CoreLocation
 
 
-// MARK: - Weather
-struct Weather: Codable {
-    let coord: Coord
-    let weather: [WeatherElement]
-    let base: String
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt: Int
-    let sys: Sys
-    let timezone, id: Int
-    let name: String
-    let cod: Int
+struct Weather: Decodable {
+    var coord: Coordinates
+    var weather: [Weather]
+    var main: Main
+    var name: String
+    var wind: Wind
+
+    struct Coordinates: Decodable {
+        var lon: Double
+        var lat: Double
+    }
+
+    struct Weather: Decodable {
+        var id: Double
+        var main: String
+        var description: String
+        var icon: String
+    }
+
+    struct Main: Decodable {
+        var temp: Double
+        var feels_like: Double
+        var temp_min: Double
+        var temp_max: Double
+        var pressure: Double
+        var humidity: Double
+    }
     
-    
-    // MARK: - Clouds
-    struct Clouds: Codable {
-        let all: Int
-    }
-
-    // MARK: - Coord
-    struct Coord: Codable {
-        let lon, lat: Double
-    }
-
-    // MARK: - Main
-    struct Main: Codable {
-        let temp, feelsLike, tempMin, tempMax: Double
-        let pressure, humidity: Int
-
-        enum CodingKeys: String, CodingKey {
-            case temp
-            case feelsLike = "feels_like"
-            case tempMin = "temp_min"
-            case tempMax = "temp_max"
-            case pressure, humidity
-        }
-    }
-
-    // MARK: - Sys
-    struct Sys: Codable {
-        let type, id: Int
-        let message: Double
-        let country: String
-        let sunrise, sunset: Int
-    }
-
-    // MARK: - WeatherElement
-    struct WeatherElement: Codable {
-        let id: Int
-        let main, weatherDescription, icon: String
-
-        enum CodingKeys: String, CodingKey {
-            case id, main
-            case weatherDescription = "description"
-            case icon
-        }
-    }
-
-    // MARK: - Wind
-    struct Wind: Codable {
-        let speed: Double
-        let deg: Int
+    struct Wind: Decodable {
+        var speed: Double
+        var deg: Double
     }
 }
 
-
-// MARK: - URL
+//extension Weather.Main {
+//    var feelsLike: Double { return feels_like }
+//    var tempMin: Double { return temp_min }
+//    var tempMax: Double { return temp_max }
+//}
+//// MARK: - URL
 // api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={API key}
 
 // MARK: - JSON Api
