@@ -14,10 +14,11 @@ class WeatherViewModel: ObservableObject {
     
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 1, longitude: 1), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
-    var weatherManager = WeatherManager()
     
-    func coordinateRegionCenter(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        region.center.longitude = longitude
-        region.center.latitude = latitude
+    // MARK: - FUNCTIONS
+    // MARK: - coordinateCenter
+    func coordinateCenter(lat: CLLocationDegrees, lon: CLLocationDegrees) {
+        region.center.longitude = lon
+        region.center.latitude = lat
     }
 }

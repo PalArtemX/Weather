@@ -19,7 +19,7 @@ struct HomeView: View {
             // MARK: - MapView
             MapView()
             VStack {
-                if let location = locationManager.location {
+                if let loc = locationManager.location {
                     if let weather = weatherVM.weather {
                         ZStack {
                             // MARK: - WeatherView
@@ -29,8 +29,8 @@ struct HomeView: View {
                         ProgressView()
                             .task {
                                 do {
-                                    weatherVM.weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
-                                    weatherVM.coordinateRegionCenter(latitude: location.latitude, longitude: location.longitude)
+                                    weatherVM.weather = try await weatherManager.getCurrentWeather(latitude: loc.latitude, longitude: loc.longitude)
+                                    weatherVM.coordinateCenter(lat: loc.latitude, lon: loc.longitude)
                                 } catch {
                                     print("⚠️ Error getting weather: \(error)")
                                 }
