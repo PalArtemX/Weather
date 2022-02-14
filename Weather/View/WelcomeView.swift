@@ -12,20 +12,16 @@ struct WelcomeView: View {
     @EnvironmentObject var locationManager: LocationManager
     
     var body: some View {
-        VStack {
-            VStack {
-                Text("Welcome")
-                    .font(.headline)
-            }
+        ZStack(alignment: .bottom) {
             
-            LocationButton(.shareCurrentLocation) {
+            
+            LocationButton(.currentLocation) {
                 locationManager.requestLocation()
+                
             }
             .cornerRadius(10)
-            .tint(.green)
-            
+            .tint(.indigo.opacity(0.5))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

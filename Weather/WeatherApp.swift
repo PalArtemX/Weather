@@ -11,11 +11,13 @@ import SwiftUI
 struct WeatherApp: App {
     
     @StateObject var locationManager = LocationManager()
+    @StateObject var weatherVM = WeatherViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environmentObject(locationManager)
+                .environmentObject(weatherVM)
         }
     }
 }

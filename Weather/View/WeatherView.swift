@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct WeatherView: View {
     let weather: Weather
     
     var body: some View {
         ZStack(alignment: .leading) {
+            
+            
             VStack {
                 Text(weather.name)
                 
