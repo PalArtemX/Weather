@@ -26,7 +26,7 @@ struct HomeView: View {
                             WeatherView(weather: weather)
                         }
                     } else {
-                        ProgressView()
+                        LoadingView()
                             .task {
                                 do {
                                     weatherVM.weather = try await weatherManager.getCurrentWeather(latitude: loc.latitude, longitude: loc.longitude)
@@ -38,7 +38,7 @@ struct HomeView: View {
                     }
                 } else {
                     if locationManager.isLoading {
-                        ProgressView()
+                        LoadingView()
                     } else {
                         // MARK: - WelcomeView
                         WelcomeView()
