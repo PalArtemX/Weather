@@ -13,4 +13,8 @@ extension Double {
     func roundDouble() -> String {
         return String(format: "%.0f", self)
     }
+    
+    func oneSignDouble() -> String {
+        return String(format: "%.1f", self)
+    }
 }

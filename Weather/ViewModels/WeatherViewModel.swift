@@ -12,8 +12,7 @@ class WeatherViewModel: ObservableObject {
     
     @Published var weather: Weather?
     
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.338910, longitude: -122.009061), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.338910, longitude: -122.009061), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     
     // MARK: - FUNCTIONS
     // MARK: - coordinateCenter
