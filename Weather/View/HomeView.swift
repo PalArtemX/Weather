@@ -11,7 +11,6 @@ import CoreLocationUI
 struct HomeView: View {
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var weatherVM: WeatherViewModel
-    
     var weatherManager = WeatherManager()
     
     var body: some View {

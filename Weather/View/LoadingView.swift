@@ -13,14 +13,20 @@ struct LoadingView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "sun.max")
-                .font(.largeTitle)
-                .symbolRenderingMode(.hierarchical)
-                .foregroundColor(.yellow)
-                .rotationEffect(Angle(degrees: isAnimation ? 360 : 0))
+            HStack {
+                Image(systemName: "cloud")
+                    .foregroundColor(.indigo)
+                Image(systemName: "sun.max")
+                    .foregroundColor(.yellow)
+                    .rotationEffect(Angle(degrees: isAnimation ? 360 : 0))
+                Image(systemName: "cloud.sun.rain")
+                    .foregroundColor(.indigo)
+            }
+            .font(.largeTitle)
+            .symbolRenderingMode(.hierarchical)
         }
         .onAppear {
-            withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)) {
+            withAnimation(Animation.linear(duration: 3).repeatForever(autoreverses: false)) {
                 isAnimation.toggle()
             }
         }
@@ -38,6 +44,10 @@ struct LoadingView: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView()
+        ZStack {
+            Color.blue.opacity(0.5)
+            LoadingView()
+        }
+        .ignoresSafeArea()
     }
 }
