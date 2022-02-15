@@ -13,18 +13,23 @@ struct LoadingView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "cloud")
-                    .foregroundColor(.indigo)
-                Image(systemName: "sun.max")
-                    .foregroundColor(.yellow)
-                    .rotationEffect(Angle(degrees: isAnimation ? 360 : 0))
-                Image(systemName: "cloud.sun.rain")
-                    .foregroundColor(.indigo)
+            HStack(spacing: 20.0) {
+                Image(systemName: "cloud.fog")
+                    
+                VStack(spacing: 20.0) {
+                    Image(systemName: "cloud.sun.rain")
+                    Image(systemName: "sun.max")
+                        .foregroundColor(.yellow)
+                        .rotationEffect(Angle(degrees: isAnimation ? 360 : 0))
+                    Image(systemName: "cloud.sleet")
+                }
+                Image(systemName: "cloud.bolt.rain")
             }
             .font(.largeTitle)
             .symbolRenderingMode(.hierarchical)
+            
         }
+        
         .onAppear {
             withAnimation(Animation.linear(duration: 3).repeatForever(autoreverses: false)) {
                 isAnimation.toggle()

@@ -51,14 +51,11 @@ struct WeatherView: View {
                         .font(.caption)
                 }
                 .font(.title)
-                //.foregroundColor(.white)
                 .symbolRenderingMode(.hierarchical)
                 
                 Text(weather.main.feels_like.roundDouble() + "°")
                     .fontWeight(.bold)
-                    //.foregroundColor(.white)
                     .font(.largeTitle)
-                    
             }
             .padding()
             
@@ -72,15 +69,15 @@ struct WeatherView: View {
                         .padding(.bottom)
                     
                     HStack {
-                        WeatherRowView(logo: "thermometer", name: "Min temp", value: (weather.main.temp_min.roundDouble() + "°"))
+                        WeatherRowView(logo: "thermometer", name: "Min temp", value: (weather.main.temp_min.oneSignDouble() + "°"))
                         Spacer()
-                        WeatherRowView(logo: "thermometer", name: "Max temp", value: (weather.main.temp_max.roundDouble() + "°"))
+                        WeatherRowView(logo: "thermometer", name: "Max temp", value: (weather.main.temp_max.oneSignDouble() + "°"))
                     }
                     
                     HStack {
                         WeatherRowView(logo: "wind", name: "Wind speed", value: (weather.wind.speed.oneSignDouble() + "m/s"))
                         Spacer()
-                        WeatherRowView(logo: "humidity", name: "Humidity", value: (weather.main.humidity.roundDouble() + "%"))
+                        WeatherRowView(logo: "humidity", name: "Humidity", value: (weather.main.humidity.oneSignDouble() + "%"))
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

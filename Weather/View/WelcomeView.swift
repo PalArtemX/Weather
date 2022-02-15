@@ -23,7 +23,7 @@ struct WelcomeView: View {
                 
             }
             .cornerRadius(10)
-            .tint(.indigo.opacity(0.5))
+            .tint(.indigo.opacity(0.8))
         }
     }
 }
