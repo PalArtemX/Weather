@@ -19,7 +19,7 @@ struct WeatherRowView: View {
                 .frame(width: 20, height: 20)
                 .padding()
             
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading) {
                 Text(name)
                     .font(.caption)
                 

@@ -10,10 +10,9 @@ import MapKit
 
 struct WeatherView: View {
     let weather: Weather
-    @State private var weatherMain = "cloud"
     
     var body: some View {
-        VStack(spacing: 100) {
+        VStack(alignment: .leading) {
             // MARK: - Header
             VStack(alignment: .leading) {
                 Text(weather.name)
@@ -23,30 +22,51 @@ struct WeatherView: View {
                     .fontWeight(.light)
             }
             .foregroundColor(.indigo)
+            .padding()
             Spacer()
             
             // MARK: - Temp
             HStack {
                 VStack {
-                    Image(systemName: "sun.max")
-                        .font(.title)
-                        .foregroundColor(.indigo)
-                        .padding(.horizontal)
+                    switch weather.weather[0].main {
+                    case "Clear":
+                        Image(systemName: "sun.max")
+                    case "Rain":
+                        Image(systemName: "cloud.rain")
+                    case "Snow":
+                        Image(systemName: "cloud.snow")
+                    case "Sun":
+                        Image(systemName: "sun.max")
+                    case "Fog":
+                        Image(systemName: "cloud.fog")
+                    case "Clouds":
+                        Image(systemName: "cloud")
+                    case "Bolt":
+                        Image(systemName: "cloud.bolt")
+                    default:
+                        Image(systemName: "questionmark.circle")
+                    }
+                    
                     Text(weather.weather[0].main)
-                        .foregroundColor(.indigo)
+                        .font(.caption)
                 }
+                .font(.title)
+                //.foregroundColor(.white)
+                .symbolRenderingMode(.hierarchical)
+                
                 Text(weather.main.feels_like.roundDouble() + "°")
                     .fontWeight(.bold)
-                    .foregroundColor(.indigo)
+                    //.foregroundColor(.white)
                     .font(.largeTitle)
-                    .padding(.horizontal)
+                    
             }
+            .padding()
             
             Spacer()
             // MARK: - Weather now
             VStack {
                 Spacer()
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading) {
                     Text("Weather now")
                         .bold()
                         .padding(.bottom)
@@ -86,6 +106,12 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(weather: previewWeather)
+        ZStack {
+            Color.gray
+                .ignoresSafeArea()
+            
+            WeatherView(weather: previewWeather)
+                .environmentObject(WeatherViewModel())
+        }
     }
 }
