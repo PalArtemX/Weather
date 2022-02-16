@@ -21,6 +21,8 @@ struct WeatherView: View {
                 Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
                     .fontWeight(.light)
             }
+            .padding()
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20))
             .foregroundColor(.indigo)
             .padding()
             Spacer()
@@ -83,8 +85,8 @@ struct WeatherView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
                 .padding(.bottom)
-                .foregroundColor(Color.white)
-                .background(.indigo)
+                .foregroundColor(.indigo)
+                .background(.ultraThinMaterial)
                 .cornerRadius(20)
             }
             .ignoresSafeArea()
