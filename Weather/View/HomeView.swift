@@ -25,6 +25,7 @@ struct HomeView: View {
                             WeatherView(weather: weather)
                         }
                     } else {
+                        // MARK: - LoadingView
                         LoadingView()
                             .task {
                                 do {
@@ -37,6 +38,7 @@ struct HomeView: View {
                     }
                 } else {
                     if locationManager.isLoading {
+                        // MARK: - LoadingView
                         LoadingView()
                     } else {
                         // MARK: - WelcomeView
