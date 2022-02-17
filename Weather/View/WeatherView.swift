@@ -68,7 +68,7 @@ struct WeatherView: View {
                 VStack(alignment: .leading) {
                     Text("Weather now")
                         .bold()
-                        .padding(.bottom)
+                        .padding([.leading, .bottom])
                     
                     HStack {
                         WeatherRowView(logo: "thermometer", name: "Min temp", value: (weather.main.temp_min.oneSignDouble() + "°"))
@@ -82,12 +82,12 @@ struct WeatherView: View {
                         WeatherRowView(logo: "humidity", name: "Humidity", value: (weather.main.humidity.roundDouble() + "%"))
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                //.frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                .padding(.bottom)
                 .foregroundColor(.indigo)
-                .background(.ultraThinMaterial)
-                .cornerRadius(20)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 35))
+                //.cornerRadius(20)
+                .padding()
             }
             .ignoresSafeArea()
         }
